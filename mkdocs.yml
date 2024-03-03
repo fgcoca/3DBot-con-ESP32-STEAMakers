@@ -1,0 +1,181 @@
+# 1. Información
+site_name: 3DBot con ESP32 STEAMakers
+site_description: Repositorio dedicado al robot 3DBot montado con una placa ESP32 STEAMakers y la shield Imagina 3DBot, los tres creación de Innova Didactic. Veremos todo sobre su programación con Arduinoblocks aunque en algún caso se podrá recurrir al IDE de Arduino.
+site_author: Federico Coca
+site_url: https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/
+
+# 2. Repositorio
+repo_name: 3DBot-con-ESP32-STEAMakers
+repo_url: https://github.com/fgcoca/3DBot-con-ESP32-STEAMakers
+edit_uri: ""
+
+
+# 3. Footer
+copyright: Copyright &copy; 2023 - 2035 Federico Coca
+extra:
+  # Footer - No poner que está hecho con MkDocs
+  generator: false
+  # Footer - Iconos
+  social:
+    - icon: fontawesome/brands/x-twitter 
+      link: https://x.com/fgcoca
+      name: X de Federico Coca
+    - icon: fontawesome/brands/github
+      link: https://github.com/fgcoca
+      name: Github de Federico Coca
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/cocafederico/?hl=es
+      name: Instagram de Federico Coca
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/clubroboticagra
+      name: X de Club Robótica Granada 
+
+# 4. Navegación
+nav:
+  - Introducción: index.md
+  - Arduinoblocks:
+    - Introducción: arduinoblocks/introAB.md
+    - Usuarios gestionados: arduinoblocks/gestionados.md
+    - Creación de proyectos para alumnos: arduinoblocks/proyectos_alumnos.md
+  - IDE 2 de Arduino:
+    - Introducción: IDE/introIDE.md
+    - Código en Arduinoblocks: IDE/codigoAB.md
+    - Descarga del IDE: IDE/descarga.md
+    - Ventana principal del IDE: IDE/ventanaIDE.md
+    - Características principales del IDE 2.0: IDE/caracteristicasIDE2_0.md
+  - ESP32 STEAMakers:
+    - Introducción: ESP32/intro.md
+    - Consumo de energia: ESP32/Cenergia.md
+    - Sensores táctiles capacitivos: ESP32/Stactil.md
+    - Sensores internos: ESP32/Sinternos.md
+    - Tarjeta microSD: ESP32/microSD.md
+  - Placa Imagina 3DBot:
+    - Introducción: Imagina/intro.md
+    - Actividades con la placa Imagina: Imagina/actividades.md
+  - 3DBot:
+    - Montaje versión impresa: 3DBot/montajeImpresa.md
+    - Montaje versión corte en madera: 3DBot/montajeCorte.md
+    - Actividades con el 3Dbot: 3DBot/actividades.md
+    - Archivos del diseño: 3DBot/archivosFab.md
+  - Miscelanea:
+    - Autor: Miscelanea/about.md 
+    - Licencias: Miscelanea/lic.md
+    - Webgrafia/Bibliografía: Miscelanea/webgrafia.md
+    - Software utilizado: Miscelanea/soft.md
+
+# 5. Google Analytics
+#google_analytics:
+#  - !!python/object/apply:os.getenv ["GOOGLE_ANALYTICS_KEY"]
+#  - auto
+
+# 6. Configuración del tema
+theme:
+  name: material
+  # Color - Fuentes - Lenguaje
+  palette:
+    # Light Mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/lightbulb
+        name: Modo Oscuro
+      primary: light blue
+      accent: deep purple 
+    # Dark Mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/lightbulb-outline
+        name: Modo Claro
+      primary: light blue
+      accent: deep purple
+  # Fuente
+  font:
+    text: Roboto 
+    code: Roboto Mono 
+  # Lenguage
+  language: es
+  logo: img/favicon.png 
+  favicon: img/favicon.png 
+  # Icono del repo
+  icon:
+    repo: fontawesome/brands/github
+  # Pestañas de navegación
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky #pestañas fijas
+# Caracteristicas especiales
+features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    # Experimental
+    - search.suggest
+    - search.highlight
+    - search.share
+
+# 7. Extensiones
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+# 8. Necesario para la extensión pydownx.arithmatex
+extra_javascript:
+  - plugins/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# 9. Plugins
+plugins:
+  - search:
+      lang: es, en
+      separator: '[\s\-,:!=\[\]()"/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: "100%"
+      height: auto
+      zoomable: true
+      draggable: true
+      auto_caption: false
+      caption_position: bottom
