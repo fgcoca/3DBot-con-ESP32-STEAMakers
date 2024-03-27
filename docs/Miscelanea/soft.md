@@ -26,3 +26,5 @@
 * [AB-Connector](http://www.arduinoblocks.com/web/site/abconnector5)
 
 * [Arduino IDE](https://www.arduino.cc/en/software) Version 2.3.2 Copyright © 2024 Arduino SA
+
+* [Fritzing](https://fritzing.org) Version 0.9.6

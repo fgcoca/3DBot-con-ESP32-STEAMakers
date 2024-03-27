@@ -285,8 +285,7 @@ En la figura siguiente vemos un ejemplo que al al iniciar se establece la variab
 <center>
 
 ![Ejemplo 3DB_Ej1](../img/arduinoblocks/3DB_Ej1.png)  
-*Ejemplo 3DB_1*  
-[Enlace a 3DB_Ej1](http://www.arduinoblocks.com/web/project/1645783)
+*[Enlace a ejemplo 3DB_Ej1](http://www.arduinoblocks.com/web/project/1645783)*
 
 </center>
 
@@ -295,8 +294,7 @@ En el siguiente ejemplo, al iniciar (o hacer reset) se envía un mensaje por el 
 <center>
 
 ![Ejemplo 3DB_Ej2](../img/arduinoblocks/3DB_Ej2.png)  
-*Ejemplo 3DB_1*  
-[Enlace a 3DB_Ej2](http://www.arduinoblocks.com/web/project/1645788)
+*[Enlace a ejemplo 3DB_Ej2](http://www.arduinoblocks.com/web/project/1645788)*
 
 </center>
 

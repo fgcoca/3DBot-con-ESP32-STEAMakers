@@ -22,6 +22,7 @@ En esta web se van a tratar los siguientes contenidos:
 
 * **Placa Imagina 3DBot**
     * Introducción
+    * Asociación de pines y componentes
     * Actividades con la placa Imagina
 
 * **3DBot**
@@ -30,4 +31,4 @@ En esta web se van a tratar los siguientes contenidos:
     * Actividades con el 3Dbot
     * Archivos del diseño
 
-Basados en los contenidos del aula virtual [Robolot Formació](https://www.robolot.online/) creados por Toni Hortal para Robolot.
+Todos los contenidos están basados en los del aula virtual [Robolot Formació](https://www.robolot.online/) creados por Toni Hortal para Robolot con aportación de algunas actualizaciones.

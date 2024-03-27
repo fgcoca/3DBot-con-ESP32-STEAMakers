@@ -101,4 +101,67 @@ Diferencias entre los perfiles de administrador principal y usuario gestionado:
 </center>
 
 ## <FONT COLOR=#007575>**Eliminar organización y/o usuarios**</font>
+Justo debajo de la lista de usuarios tenemos los dos botones siguientes:
+
+<center>
+
+![Botones eliminar usuarios y organización](../img/arduinoblocks/AB29.png)  
+*Botones eliminar usuarios y organización*  
+
+</center>
+
+Con el botón 'Eliminar todos los usuarios' podemos eliminar todos los usuarios de una organización. Con el botón 'Eliminar organización + todos los usuarios' se eliminarán la organización y todos los usuarios y sus proyectos.
+
+El único usuario que dispone de estas dos opciones es el creador del dominio.
+
+Para aliminar un usuario concreto tenemos disponible la papelera a la derecha de su nombre.
+
+## <FONT COLOR=#007575>**Añadir coadministradores**</font>
+
+* Podemos añadir a otros usuarios como coadministradores de la organización.
+* Sólo el usuario administrador principal (creador de la organización) puede eliminarlos.
+* Los usuarios coadministradores no pueden añadir ni eliminar otros coadministradores.
+* Los usuarios coadministradores pueden gestionar a los usuarios como el usuario administrador principal.
+
+Para añadir un coadministrador, en la página principal de usuarios gestionados, hacemos clic en el botón 'Añadir administrador/profesor...'. Pedirá el correo electrónico del coadministrador:
+
+<center>
+
+![Añadiendo usuario coadministrador](../img/arduinoblocks/AB30.png)  
+*Añadiendo usuario coadministrador*  
+
+</center>
+
+## <FONT COLOR=#007575>**Iniciar sesión desde una cuenta gestionada**</font>
+En la ventana de inicio de sesión, en 'Correo electrónico' el usuario debe escribir el correo electrónico otorgado en la organización que tendrá un formato de tipo 'nombre.organización':
+
+<center>
+
+![Inicio de sesión como usuario gestionado](../img/arduinoblocks/AB31.png)  
+*Inicio de sesión como usuario gestionado*  
+
+</center>
+
+## <FONT COLOR=#007575>**Nuevo proyecto de usuario gestionado**</font>
+Una vez iniciada la sesión, el usuario gestionado puede iniciar un nuevo proyecto personal clicando en el botón 'Mis proyectos' o unirse al proyecto de un profesor clicando en el botón 'Empezar un nuevo proyecto!':
+
+<center>
+
+![Opciones tras inicio de sesión de usuario gestionado](../img/arduinoblocks/AB32.png)  
+*Opciones tras inicio de sesión de usuario gestionado*  
+
+</center>
+
+En el primer caso se mostrará un listado de los proyectos del usuario gestionado y en el segundo caso el usuario gestionado puede iniciar un proyecto personal o escribir el código del proyecto y clicar en el botón 'Unirme al proyecto de mi profesor':
+
+<center>
+
+![Opciones de 'Empezar un nuevo proyecto!'](../img/arduinoblocks/AB33.png)  
+*Opciones de 'Empezar un nuevo proyecto!'*  
+
+</center>
+
+***
+<FONT COLOR=#FF0000>**IMPORTANTE:</font> El profesor que genera el código debe ser administrador de la organización a la que pertenece el usuario.**
+***
 

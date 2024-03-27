@@ -44,14 +44,19 @@ nav:
     - Ventana principal del IDE: IDE/ventanaIDE.md
     - Características principales del IDE 2.0: IDE/caracteristicasIDE2_0.md
   - ESP32 STEAMakers:
-    - Introducción: ESP32/intro.md
+    - Introducción: ESP32/introESP32.md
     - Consumo de energia: ESP32/Cenergia.md
     - Sensores táctiles capacitivos: ESP32/Stactil.md
     - Sensores internos: ESP32/Sinternos.md
     - Tarjeta microSD: ESP32/microSD.md
   - Placa Imagina 3DBot:
-    - Introducción: Imagina/intro.md
-    - Actividades con la placa Imagina: Imagina/actividades.md
+    - Introducción: Imagina/introImagina.md
+    - Asociación de pines y componentes: Imagina/distribucion.md
+    - Teoría básica de IoT: Imagina/IoT_basico.md
+    - Actividades con la placa Imagina: 
+      - Básicas: Imagina/actividades.md
+      - De ampliación: Imagina/amplia.md
+      - Avanzadas: Imagina/avanzadas_imagina.md
   - 3DBot:
     - Montaje versión impresa: 3DBot/montajeImpresa.md
     - Montaje versión corte en madera: 3DBot/montajeCorte.md
