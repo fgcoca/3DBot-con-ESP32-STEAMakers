@@ -2,137 +2,157 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/3DBot/actividades/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/3DBot/archivosFab/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/3DBot/montajeCorte/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/3DBot/montajeImpresa/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/ESP32/Cenergia/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/ESP32/Sinternos/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/ESP32/Stactil/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/ESP32/intro/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/ESP32/introESP32/</loc>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/ESP32/microSD/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/IDE/caracteristicasIDE2_0/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/IDE/codigoAB/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/IDE/descarga/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/IDE/introIDE/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/IDE/ventanaIDE/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/Imagina/IoT_basico/</loc>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/Imagina/actividades/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/Imagina/intro/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/Imagina/amplia/</loc>
+         <lastmod>2024-03-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/Imagina/avanzadas_imagina/</loc>
+         <lastmod>2024-03-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/Imagina/distribucion/</loc>
+         <lastmod>2024-03-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/Imagina/introImagina/</loc>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/Miscelanea/about/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/Miscelanea/lic/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/Miscelanea/soft/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/Miscelanea/webgrafia/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/arduinoblocks/gestionados/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/arduinoblocks/introAB/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/arduinoblocks/proyectos_alumnos/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/ayuda/ayuda/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/ayuda/markdown/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/ayuda/material/</loc>
-         <lastmod>2024-03-03</lastmod>
+         <lastmod>2024-03-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
