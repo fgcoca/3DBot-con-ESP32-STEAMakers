@@ -1,0 +1,2244 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Repositorio dedicado al robot 3DBot montado con una placa ESP32 STEAMakers y la shield Imagina 3DBot, los tres creación de Innova Didactic. Veremos todo sobre su programación con Arduinoblocks aunque en algún caso se podrá recurrir al IDE de Arduino.">
+      
+      
+        <meta name="author" content="Federico Coca">
+      
+      
+        <link rel="canonical" href="https://fgcoca.github.io/3DBot-con-ESP32-STEAMakers/3DBot/AI_3DBot/">
+      
+      
+        <link rel="prev" href="../motorDC/">
+      
+      
+        <link rel="next" href="../AAm_3DBot/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
+    
+    
+      
+        <title>Iniciales - 3DBot con ESP32 STEAMakers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#actividades-3dbot" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="3DBot con ESP32 STEAMakers" class="md-header__button md-logo" aria-label="3DBot con ESP32 STEAMakers" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            3DBot con ESP32 STEAMakers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Iniciales
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo Oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="deep-purple"  aria-label="Modo Claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo Claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fgcoca/3DBot-con-ESP32-STEAMakers" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    3DBot-con-ESP32-STEAMakers
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Introducción
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../arduinoblocks/introAB/" class="md-tabs__link">
+          
+  
+  Arduinoblocks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../IDE/introIDE/" class="md-tabs__link">
+          
+  
+  IDE 2 de Arduino
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ESP32/introESP32/" class="md-tabs__link">
+          
+  
+  ESP32 STEAMakers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Imagina/introImagina/" class="md-tabs__link">
+          
+  
+  Placa Imagina 3DBot
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../montajeImpresa/" class="md-tabs__link">
+          
+  
+  3DBot
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Miscelanea/about/" class="md-tabs__link">
+          
+  
+  Miscelanea
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="3DBot con ESP32 STEAMakers" class="md-nav__button md-logo" aria-label="3DBot con ESP32 STEAMakers" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    3DBot con ESP32 STEAMakers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fgcoca/3DBot-con-ESP32-STEAMakers" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    3DBot-con-ESP32-STEAMakers
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Arduinoblocks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Arduinoblocks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arduinoblocks/introAB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arduinoblocks/gestionados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usuarios gestionados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arduinoblocks/proyectos_alumnos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creación de proyectos para alumnos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IDE 2 de Arduino
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            IDE 2 de Arduino
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IDE/introIDE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IDE/codigoAB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Código en Arduinoblocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IDE/descarga/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descarga del IDE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IDE/ventanaIDE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ventana principal del IDE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IDE/caracteristicasIDE2_0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Características principales del IDE 2.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ESP32 STEAMakers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ESP32 STEAMakers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ESP32/introESP32/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ESP32/Cenergia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consumo de energia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ESP32/Stactil/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sensores táctiles capacitivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ESP32/Sinternos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sensores internos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ESP32/microSD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tarjeta microSD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Placa Imagina 3DBot
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Placa Imagina 3DBot
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Imagina/introImagina/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Imagina/distribucion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asociación de pines y componentes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Imagina/IoT_basico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teoría básica de IoT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades con la placa Imagina
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades con la placa Imagina
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Imagina/actividades/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Básicas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Imagina/amplia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    De ampliación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Imagina/avanzadas_imagina/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Avanzadas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    3DBot
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            3DBot
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../montajeImpresa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Montaje versión impresa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../montajeCorte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Montaje versión corte en madera
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../motorDC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    El motor DC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Actividades con el 3Dbot
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Actividades con el 3Dbot
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Iniciales
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Iniciales
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a_01-control-de-un-motor-dc" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_01. Control de un motor DC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a_02-control-de-dos-motores-dc" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_02. Control de dos motores DC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A_02. Control de dos motores DC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_02_1-a-bailar" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_02_1. ¡A bailar!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_02_2-creando-secuencias-de-movimientos" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_02_2. ¡Creando secuencias de movimientos!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_02_3-giro-y-semaforo-loco" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_02_3. Giro y semáforo loco
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_02_4-movimientos" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_02_4. Movimientos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_02_5-senalizando-la-marcha-atras" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_02_5. Señalizando la marcha atrás
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_02_6-en-busca-de-la-luz" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_02_6. En busca de la luz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a_03-control-del-robot-con-un-encoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_03. Control del robot con un encoder
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A_03. Control del robot con un encoder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_03_1-lectura-basica-del-encoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_03_1. Lectura básica del encoder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_03_2-recorrido-programado-contando-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_03_2. Recorrido programado contando “pasos”
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a_04-control-del-robot-por-mando-ir" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_04. Control del robot por mando IR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A_04. Control del robot por mando IR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_04_1-control-de-direccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_04_1. Control de dirección
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_04_2-control-de-direccion-y-velocidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_04_2. Control de dirección y velocidad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_04_3-lectura-de-los-codigos-de-las-teclas-desde-un-mando-ir-cualquiera" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_04_3. Lectura de los códigos de las teclas desde un mando IR cualquiera
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_04_4-control-del-robot-con-un-mando-ir-cualquiera" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_04_4. Control del robot con un mando IR cualquiera
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AAm_3DBot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    De ampliación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Av_3DBot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Avanzadas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archivosFab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archivos del diseño
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Miscelanea
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Miscelanea
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Autor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/lic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Licencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/webgrafia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Webgrafia/Bibliografía
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscelanea/soft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software utilizado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a_01-control-de-un-motor-dc" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_01. Control de un motor DC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a_02-control-de-dos-motores-dc" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_02. Control de dos motores DC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A_02. Control de dos motores DC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_02_1-a-bailar" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_02_1. ¡A bailar!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_02_2-creando-secuencias-de-movimientos" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_02_2. ¡Creando secuencias de movimientos!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_02_3-giro-y-semaforo-loco" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_02_3. Giro y semáforo loco
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_02_4-movimientos" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_02_4. Movimientos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_02_5-senalizando-la-marcha-atras" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_02_5. Señalizando la marcha atrás
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_02_6-en-busca-de-la-luz" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_02_6. En busca de la luz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a_03-control-del-robot-con-un-encoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_03. Control del robot con un encoder
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A_03. Control del robot con un encoder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_03_1-lectura-basica-del-encoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_03_1. Lectura básica del encoder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_03_2-recorrido-programado-contando-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_03_2. Recorrido programado contando “pasos”
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a_04-control-del-robot-por-mando-ir" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_04. Control del robot por mando IR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A_04. Control del robot por mando IR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_04_1-control-de-direccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_04_1. Control de dirección
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_04_2-control-de-direccion-y-velocidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_04_2. Control de dirección y velocidad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_04_3-lectura-de-los-codigos-de-las-teclas-desde-un-mando-ir-cualquiera" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_04_3. Lectura de los códigos de las teclas desde un mando IR cualquiera
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a_04_4-control-del-robot-con-un-mando-ir-cualquiera" class="md-nav__link">
+    <span class="md-ellipsis">
+      A_04_4. Control del robot con un mando IR cualquiera
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="actividades-3dbot"><FONT COLOR=#8B008B>Actividades 3DBot</font><a class="headerlink" href="#actividades-3dbot" title="Permanent link">&para;</a></h1>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/act_3dbot_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Robot 3DBot" src="../../img/3DBot/actividades/act_3dbot_1.png" /></a><br />
+<em>Robot 3DBot</em>  </p>
+<p></center></p>
+<h2 id="a_01-control-de-un-motor-dc"><FONT COLOR=#007575><strong>A_01. Control de un motor DC</strong></font><a class="headerlink" href="#a_01-control-de-un-motor-dc" title="Permanent link">&para;</a></h2>
+<p>La placa Imagina 3DBot ya lleva incorporado un driver o controlador de motores de CC. Con él podemos realizar el control de 2 motores de corriente continua (CC) de hasta 2 A (amperios).</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/pos_mot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Posición de los conectores para motores" src="../../img/3DBot/actividades/pos_mot.png" /></a><br />
+<em>Posición de los conectores para motores</em>  </p>
+<p></center></p>
+<p>Seguramente habrás observado que en el menú 3DBot existen algunas instrucciones específicas para controlar el motor A o izquierdo, como la de la imagen adjunta. Cambiando la selección del motor sirve también para controlar las mismas acciones para el motor B o derecho.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/bloq_control_M.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bloque de control de motor del menú 3DBot" src="../../img/3DBot/actividades/bloq_control_M.png" /></a><br />
+<em>Bloque de control de motor del menú 3DBot</em>  </p>
+<p></center></p>
+<p>En el montaje del robot veíamos que, para conseguir un correcto funcionamiento con los bloques de Arduinoblocks, es necesario unir el motor izquierdo con el conector del motor A y el derecho con el conector B. Si los intercambiamos provocaremos que el robot se mueva en sentido contrario al programado.</p>
+<p>Realizar esta práctica nos servirá para saber si hemos montado y conectado correctamente los motores. Vamos a aprender a hacer funcionar el motor A, donde está conectado el motor izquierdo. Lo haremos mover hacia delante en el sentido de la marcha, hacia atrás y lo pararemos.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_01_1_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_01_1_3DBot" src="../../img/3DBot/actividades/A_01_1_3DBot.png" /></a><br />
+<em>A_01_1_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1699955">Acceder al programa</a></p>
+<p></center></p>
+<p>Podemos observar en el funcionamiento el encendido de los LED que hay junto a los conectores para indicar el sentido de marcha del motor.</p>
+<p>Podemos hacer funcionar cualquiera de los dos motores, en cualquier sentido, detenerlos e incluso podemos ajustar la velocidad de rotación.</p>
+<ul>
+<li>En <strong>“Velocidad”</strong>, valores muy pequeños no son capaces de poner en marcha el motor.</li>
+<li>cc
+Si introducimos el siguiente programa observaremos que el motor A va hacia delante a una velocidad rápida durante 2 segundos, después a una velocidad más lenta otros 2 segundos y finalmente se detiene y repite el proceso.</li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_01_2_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_01_2_3DBot" src="../../img/3DBot/actividades/A_01_2_3DBot.png" /></a><br />
+<em>A_01_2_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1699957">Acceder al programa</a></p>
+<p></center></p>
+<p>Hasta aquí hemos visto que podemos controlar los motores de forma individual, pero para hacer funcionar al Imagina 3DBot existe un bloque aún más fácil que se llama “Mover”.</p>
+<p>Ahora estamos preparados para sacarnos el carné básico de “Entrenador de robots”.</p>
+<h2 id="a_02-control-de-dos-motores-dc"><FONT COLOR=#007575><strong>A_02. Control de dos motores DC</strong></font><a class="headerlink" href="#a_02-control-de-dos-motores-dc" title="Permanent link">&para;</a></h2>
+<p>Con un solo bloque, “Mover”, que encontramos en el apartado “3dBot”, podemos dar las órdenes de avanzar, retroceder, girar, rotar sobre sí mismo y parar. También podemos seleccionar la velocidad con tres opciones posibles.¡Así de sencillo!</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/mover.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bloque Mover" src="../../img/3DBot/actividades/mover.png" /></a><br />
+<em>Bloque Mover</em>  </p>
+<p></center></p>
+<p>Vamos a realizar una serie de ejercicios para practicar todo lo que hemos aprendido hasta ahora y mezclar los temas de funciones, variables, etc.</p>
+<h3 id="a_02_1-a-bailar"><FONT COLOR=#AA0000>A_02_1. ¡A bailar!</font><a class="headerlink" href="#a_02_1-a-bailar" title="Permanent link">&para;</a></h3>
+<p>El siguiente programa hace que el robot rote sobre sí mismo constantemente:</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_02_1_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_02_1_3DBot" src="../../img/3DBot/actividades/A_02_1_3DBot.png" /></a><br />
+<em>A_02_1_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1699983">Acceder al programa</a></p>
+<p></center></p>
+<h3 id="a_02_2-creando-secuencias-de-movimientos"><FONT COLOR=#AA0000>A_02_2. ¡Creando secuencias de movimientos!</font><a class="headerlink" href="#a_02_2-creando-secuencias-de-movimientos" title="Permanent link">&para;</a></h3>
+<p>Vamos a empezar a estirar las piernas y las ruedas… con unos movimientos sencillos de calentamiento. Poco a poco haremos que estas secuencias dependan de estímulos externos y condiciones más elaboradas.</p>
+<p>El robot realizará los siguientes movimientos:</p>
+<ul>
+<li>Ir en línea recta durante un segundo</li>
+<li>Girar a la izquierda durante un segundo</li>
+<li>Volver a ir en línea recta durante otro segundo</li>
+<li>Girar a la derecha durante otro segundo</li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_02_2_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_02_2_3DBot" src="../../img/3DBot/actividades/A_02_2_3DBot.png" /></a><br />
+<em>A_02_2_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1699987">Acceder al programa</a></p>
+<p></center></p>
+<h3 id="a_02_3-giro-y-semaforo-loco"><FONT COLOR=#AA0000>A_02_3. Giro y semáforo loco</font><a class="headerlink" href="#a_02_3-giro-y-semaforo-loco" title="Permanent link">&para;</a></h3>
+<p>Empieza el espectáculo: LED, cámaras y… ¡Acción!</p>
+<p>Ahora nuestro robot rotará todo el rato a la izquierda, mientras sus 3 LED se encienden y apagan de forma secuencial. ¡Recuerda que el ritmo desenfrenado lo marcas tú!</p>
+<p>Ten en cuenta que el robot estará rotando a la izquierda todo el rato, independientemente de lo que hagan los LED, ¡ya que nunca le ordenamos que se pare!</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_02_3_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_02_3_3DBot" src="../../img/3DBot/actividades/A_02_3_3DBot.png" /></a><br />
+<em>A_02_3_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1700217">Acceder al programa</a></p>
+<p></center></p>
+<h3 id="a_02_4-movimientos"><FONT COLOR=#AA0000>A_02_4. Movimientos</font><a class="headerlink" href="#a_02_4-movimientos" title="Permanent link">&para;</a></h3>
+<p>Para poder conocer todos los sentidos de giro posibles que puede hacer el robot, te propongo que hagas los programas de los siguientes movimientos:</p>
+<ul>
+<li><FONT COLOR=#0000FF><b>Adelante y atrás</b></font></li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/Adelante_atras.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Adelante y atrás" src="../../img/3DBot/actividades/Adelante_atras.png" /></a><br />
+<em>Adelante y atrás</em>  </p>
+<p></center></p>
+<ul>
+<li><FONT COLOR=#0000FF><b>Pivotar</b></font></li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/Pivotar.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pivotar" src="../../img/3DBot/actividades/Pivotar.png" /></a><br />
+<em>Pivotar</em>  </p>
+<p></center></p>
+<ul>
+<li><FONT COLOR=#0000FF><b>Giros adelante</b></font></li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/Giros_adelante.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Giros adelante" src="../../img/3DBot/actividades/Giros_adelante.png" /></a><br />
+<em>Giros adelante</em>  </p>
+<p></center></p>
+<ul>
+<li><FONT COLOR=#0000FF><b>Giros atrás</b></font></li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/Giros_atras.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Giros atrás" src="../../img/3DBot/actividades/Giros_atras.png" /></a><br />
+<em>Giros atrás</em>  </p>
+<p></center></p>
+<ul>
+<li><FONT COLOR=#0000FF><b>Parar</b></font></li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/Parar.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Parar" src="../../img/3DBot/actividades/Parar.png" /></a><br />
+<em>Parar</em>  </p>
+<p></center></p>
+<p>En el programa siguiente se ejecutan todos los movimientos de forma indefinida a intervalos de tres segundos.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_02_4_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_02_4_3DBot" src="../../img/3DBot/actividades/A_02_4_3DBot.png" /></a><br />
+<em>A_02_4_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1700329">Acceder al programa</a></p>
+<p></center></p>
+<h3 id="a_02_5-senalizando-la-marcha-atras"><FONT COLOR=#AA0000>A_02_5. Señalizando la marcha atrás</font><a class="headerlink" href="#a_02_5-senalizando-la-marcha-atras" title="Permanent link">&para;</a></h3>
+<p>Este programa tiene dos partes fundamentales:</p>
+<ul>
+<li>Avance hacia delante con el piloto verde encendido.</li>
+<li>Marcha atrás con el piloto rojo encendido y un silbato intermitente de señalización de maniobra "peligrosa".</li>
+</ul>
+<p>Vamos a presentar una versión del programa en la que creamos dos funciones, y otra en la que se realiza el programa completo directamente en el bucle (sin funciones). La diferencia en este caso no es significativa, ya que no es un programa extenso ni se realizan muchas repeticiones.</p>
+<p>Por cierto, cuidado, porque lo peligroso puede acabar siendo el silbato… para los oídos.</p>
+<ul>
+<li><strong>Programa con funciones</strong></li>
+</ul>
+<p>Se definen dos funciones: “ir hacia delante” e “ir hacia atrás”. El programa completo es el siguiente:</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_02_5_fun_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_02_5_fun_3DBot" src="../../img/3DBot/actividades/A_02_5_fun_3DBot.png" /></a><br />
+<em>A_02_5_fun_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1700363">Acceder al programa</a></p>
+<p></center></p>
+<ul>
+<li><strong>Programa sin funciones</strong></li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_02_5_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_02_5_3DBot" src="../../img/3DBot/actividades/A_02_5_3DBot.png" /></a><br />
+<em>A_02_5_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1700364">Acceder al programa</a></p>
+<p></center></p>
+<h3 id="a_02_6-en-busca-de-la-luz"><FONT COLOR=#AA0000>A_02_6. En busca de la luz</font><a class="headerlink" href="#a_02_6-en-busca-de-la-luz" title="Permanent link">&para;</a></h3>
+<p>Vamos a jugar algo con los niveles de luz. El robot Imagina 3DBot tiene un sensor de luz (LDR) que detecta las variaciones de iluminación y las "traduce" a señales de tensión. En el apartado "3dBot" se encuentra el bloque que se encarga de programar este sensor.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/bloque_LDR.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bloque sensor de luz" src="../../img/3DBot/actividades/bloque_LDR.png" /></a><br />
+<em>Bloque sensor de luz</em>  </p>
+<p></center></p>
+<p>Además, en el apartado “Lógica” encontramos un bloque que nos permite realizar comparaciones que NO dependen de operaciones matemáticas directas, es decir, comparaciones de estados, valores, etc. Pulsando en la flecha dibujada en el bloque se abre un desplegable con diferentes opciones de comparación:</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/bloque_comparar.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bloque comparar" src="../../img/3DBot/actividades/bloque_comparar.png" /></a><br />
+<em>Bloque comparar</em>  </p>
+<p></center></p>
+<p>Vamos a combinar este último bloque con funciones ya aprendidas para comparar un valor de iluminación fijado por nosotros con el valor de iluminación que lea el robot. En este caso, vamos a guardar los valores de iluminación leídos en la variable “luminosidad”. Utilizaremos también el bloque "Un número" del apartado “Matemáticas” para hacer la comparación.</p>
+<p>Si hay luz, ¡avanza adelante!</p>
+<p>En este caso vamos a hacer que, si el valor de luz detectado es superior a una cifra (en este ejemplo 300) el robot avance en línea recta. Si el valor es menor, que permanezca parado.</p>
+<p>Puedes utilizarlo, por ejemplo, para que se mueva sólo cuando se le enfoca con la linterna del móvil en una habitación con poca luz y se comporte como un robot tipo polilla.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_02_6_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_02_6_3DBot" src="../../img/3DBot/actividades/A_02_6_3DBot.png" /></a><br />
+<em>A_02_6_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1700389">Acceder al programa</a></p>
+<p></center></p>
+<p>Si después de cargar el programa el robot se mueve todo el rato (aunque no se le enfoca con la linterna), querrá decir que el nivel de luz de la sala es mayor que este 300 incluido en el programa. En este caso simplemente habrá que aumentarlo hasta conseguir el resultado deseado.</p>
+<p>Por otro lado, sólo cambiando el operando de la comparación conseguiremos el efecto contrario: que el robot avance cuando haya poca luz y se detenga cuando el nivel suba:</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_02_6bis_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_02_6bis_3DBot" src="../../img/3DBot/actividades/A_02_6bis_3DBot.png" /></a><br />
+<em>A_02_6bis_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1700395">Acceder al programa</a></p>
+<p></center></p>
+<h2 id="a_03-control-del-robot-con-un-encoder"><FONT COLOR=#007575><strong>A_03. Control del robot con un encoder</strong></font><a class="headerlink" href="#a_03-control-del-robot-con-un-encoder" title="Permanent link">&para;</a></h2>
+<p>¿Qué es un <strong>encoder</strong>?</p>
+<p><FONT COLOR=#0000FF><b>Esta actividad requiere de la colocación de una pieza impresa en 3D en el interior de la rueda derecha, tal y como se describe en el apartado correspondiente de <a href="../archivosFab/">Archivos de diseño</a></font></b></p>
+<p>En pocas palabras, un encoder es un dispositivo de detección que proporciona una respuesta. Los encoders convierten el movimiento en una señal eléctrica que puede ser leída por algún tipo de dispositivo de control en un sistema de control de movimiento, como por ejemplo nuestro robot. Nos permitirá saber cuánto avanza y retrocede nuestro robot.</p>
+<p>Hemos visto en el montaje del robot que en la rueda derecha existe un sensor óptico con el fin de actuar como un encoder. La función del encoder es convertir en señales eléctricas el giro de la rueda, para así saber cuánto ha girado en cada momento.</p>
+<p>Como se aprecia en la siguiente figura, el sensor óptico se activa cuando detecta un radio de nuestra rueda delante, y se desactiva cuando no hay nada (espacio entre radios).</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/Rueda_encoder.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Rueda encoder" src="../../img/3DBot/actividades/Rueda_encoder.png" /></a><br />
+<em>Rueda encoder</em>  </p>
+<p></center></p>
+<p>Teniendo en cuenta que la rueda tiene, por ejemplo, 12 radios, cuando hayamos contado 12 pulsos significará que la rueda ha dado una vuelta completa.</p>
+<p>Podemos utilizar esta funcionalidad para controlar distancias y giros en el 3DBot. Lo hacemos con el bloque “<strong>Esperar … pasos</strong>” que se encuentra en el apartado “3dBot”. A cada pulso recibido se le llama "paso". Siguiendo el ejemplo de antes, una vuelta de rueda completa serán 12 "pasos".</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/Bloque_esperar_pasos.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bloque Esperar … pasos" src="../../img/3DBot/actividades/Bloque_esperar_pasos.png" /></a><br />
+<em>Bloque Esperar … pasos</em>  </p>
+<p></center></p>
+<p>Se puede comprobar experimentalmente que, aproximadamente, para dar un giro de 90 grados hacia la izquierda, la rueda derecha debe mover 4 pasos (pasan 4 radios de la rueda por delante del sensor óptico). De esta forma podemos decirle a nuestro robot que gire 90 grados, 180 grados, etc.</p>
+<h3 id="a_03_1-lectura-basica-del-encoder"><FONT COLOR=#AA0000>A_03_1. Lectura básica del encoder</font><a class="headerlink" href="#a_03_1-lectura-basica-del-encoder" title="Permanent link">&para;</a></h3>
+<p>En este primer programa simplemente vamos a leer el valor analógico del pin A1 al que está conectado el sensor y convertirlo a valor Booleano. El sensor lo activamos moviendo la rueda derecha y los resultados los vemos en la Consola.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_03_1_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_03_1_3DBot" src="../../img/3DBot/actividades/A_03_1_3DBot.png" /></a><br />
+<em>A_03_1_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1700494">Acceder al programa</a></p>
+<p></center></p>
+<h3 id="a_03_2-recorrido-programado-contando-pasos"><FONT COLOR=#AA0000>A_03_2. Recorrido programado contando “pasos”</font><a class="headerlink" href="#a_03_2-recorrido-programado-contando-pasos" title="Permanent link">&para;</a></h3>
+<p>El programa funciona de forma similar a los juegos con LED utilizando la función “Esperar… pasos”. Aquí, el robot mantendrá la última dirección programada hasta que se dé el número de pasos descrito.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_03_2_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_03_2_3DBot" src="../../img/3DBot/actividades/A_03_2_3DBot.png" /></a><br />
+<em>A_03_2_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1701223">Acceder al programa</a></p>
+<p></center></p>
+<h2 id="a_04-control-del-robot-por-mando-ir"><FONT COLOR=#007575><strong>A_04. Control del robot por mando IR</strong></font><a class="headerlink" href="#a_04-control-del-robot-por-mando-ir" title="Permanent link">&para;</a></h2>
+<p>La placa Imagina 3DBot lleva incorporado un diodo receptor de infrarrojos. Se encuentra junto a los sensores de temperatura y luz.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_04_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Posición del recptor de IR" src="../../img/3DBot/actividades/A_04_1.png" /></a><br />
+<em>Posición del recptor de IR</em>  </p>
+<p></center></p>
+<p>Pasamos a controlar el robot en tiempo real. Vamos a utilizar inicialmente el mando de Keyestudio, que dispone de un bloque específico en Arduinoblocks, lo que hace que la programación sea muy rápida y sencilla.</p>
+<p><center><a href="http://127.0.0.1:8000/3DBot-con-ESP32-STEAMakers/Imagina/actividades/#a08-infrarrojos">Ampliación de información sobre infrarrojos</a></center></p>
+<p>Posteriormente aprenderemos a utilizar cualquier mando, incluso el de la tele, que siempre está a mano.</p>
+<p>Y finalmente haremos un programa algo más avanzado en el que no sólo cambiaremos la dirección del robot, sino también su velocidad.</p>
+<h3 id="a_04_1-control-de-direccion"><FONT COLOR=#AA0000>A_04_1. Control de dirección</font><a class="headerlink" href="#a_04_1-control-de-direccion" title="Permanent link">&para;</a></h3>
+<p>Para este ejemplo vamos a utilizar el mando de infrarrojos (IR) de Keyestudio. Concretamente utilizaremos las teclas de dirección para mover el robot en las 4 direcciones. Además, con el botón central de “OK” haremos que se detenga. Para ello necesitamos 2 nuevos bloques:</p>
+<ul>
+<li>en el apartado “3dBot” tenemos el bloque “Receptor de IR (Texto HEX)”, que lee los datos procedentes de un mando con infrarrojos:</li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_04_2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bloque receptor de IR" src="../../img/3DBot/actividades/A_04_2.png" /></a><br />
+<em>Bloque receptor de IR</em>  </p>
+<p></center></p>
+<ul>
+<li>en el apartado “3dBot” encontramos el bloque del mando de Keyestudio, en el que, pulsando en el desplegable, podemos seleccionar cualquiera de sus teclas:</li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_04_3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bloque del mando de Keyestudio" src="../../img/3DBot/actividades/A_04_3.png" /></a><br />
+<em>Bloque del mando de Keyestudio</em>  </p>
+<p></center></p>
+<p><b><u>IMPORTANTE:</u></b><FONT COLOR=#AA0000><b> tienes que cambiar la versión del comando a v2</b></font></p>
+<p>Utilizaremos el bloque de comparación del apartado “Texto” que dice “igual a” para comparar el dato leído por el sensor IR con el dato seleccionado por nosotros para una función determinada.</p>
+<p>Con un condicional “si… hacer…” decidiremos qué acción tomar.</p>
+<p>En la variable "Mando" guardamos los valores leídos por el receptor infrarrojo, para así compararlos con los valores correspondientes al mando. El programa resultante lo podemos ver a continuación:</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_04_1_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_04_1. Control de dirección" src="../../img/3DBot/actividades/A_04_1_3DBot.png" /></a><br />
+<em>A_04_1. Control de dirección</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1700481">Acceder al programa</a></p>
+<p></center></p>
+<h3 id="a_04_2-control-de-direccion-y-velocidad"><FONT COLOR=#AA0000>A_04_2. Control de dirección y velocidad</font><a class="headerlink" href="#a_04_2-control-de-direccion-y-velocidad" title="Permanent link">&para;</a></h3>
+<p>Ampliamos el ejercicio anterior para introducir el control de velocidad con el mando de Keyestudio.</p>
+<p>En el apartado “3dBot” encontraremos el bloque para controlar la dirección de cada motor y su velocidad.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_04_4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bloque control dirección y velocidad" src="../../img/3DBot/actividades/A_04_4.png" /></a><br />
+<em>Bloque control dirección y velocidad</em>  </p>
+<p></center></p>
+<p>La velocidad del motor se controla con el dato numérico que hay en la parte derecha del bloque. Su velocidad aumenta proporcionalmente al número incluido, siendo 0 motor parado y 255 motor a su máxima velocidad. Aquí podemos incluir una variable para que esa velocidad provenga de una lectura del mando IR, por ejemplo.</p>
+<p>En el desplegable, junto a la palabra “Motor”, seleccionamos qué motor queremos controlar.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_04_5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bloque control dirección y velocidad. Motor" src="../../img/3DBot/actividades/A_04_5.png" /></a><br />
+<em>Bloque control dirección y velocidad. Motor</em>  </p>
+<p></center></p>
+<p>Y en el desplegable siguiente escogemos el sentido de giro:</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_04_6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Bloque control dirección y velocidad. Giro" src="../../img/3DBot/actividades/A_04_6.png" /></a><br />
+<em>Bloque control dirección y velocidad. Giro</em>  </p>
+<p></center></p>
+<p>Una vez conocidos los nuevos elementos, vamos a realizar el programa. Para ello, definimos las variables que representan a los movimientos que podrá efectuar el robot. Como decíamos, la velocidad la tomaremos de una variable “Velocidad” que asignaremos en el bucle del programa.</p>
+<p><FONT COLOR=#BB00FF><font size="5"><b><u>Funciones</b></u></font color></font size></p>
+<ul>
+<li><strong>“Adelante”</strong>: con los 2 motores girando en el sentido de avance, hacemos que se mueva en línea recta:</li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/Func_adelante.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Función adelante" src="../../img/3DBot/actividades/Func_adelante.png" /></a><br />
+<em>Función adelante</em>  </p>
+<p></center></p>
+<ul>
+<li><strong>"Giro izquierda"</strong>: lo conseguimos avanzando con la rueda derecha y manteniendo la izquierda parada:</li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/Func_giro_izq.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Función giro izquierda" src="../../img/3DBot/actividades/Func_giro_izq.png" /></a><br />
+<em>Función giro izquierda</em>  </p>
+<p></center></p>
+<ul>
+<li><strong>"Giro derecha"</strong>: lo conseguimos avanzando con la rueda izquierda y manteniendo la derecha parada:</li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/Func_giro_dcha.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Función giro derecha" src="../../img/3DBot/actividades/Func_giro_dcha.png" /></a><br />
+<em>Función giro derecha</em>  </p>
+<p></center></p>
+<ul>
+<li><strong>“Parar”</strong>: lo hacemos seleccionando en ambos motores la opción “Parar”.</li>
+</ul>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/Func_giro_parar.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Función parar" src="../../img/3DBot/actividades/Func_giro_parar.png" /></a><br />
+<em>Función parar</em>  </p>
+<p></center></p>
+<p><FONT COLOR=#BB00FF><font size="5"><b><u>Bucle</b></u></font color></font size></p>
+<p>Primero leemos los datos recibidos por el receptor IR y los guardamos en la variable “Mando”. A continuación, diferenciamos los datos recibidos en 2 tipos:</p>
+<ul>
+<li>Datos para el cambio de velocidad</li>
+<li>Datos para el cambio de dirección</li>
+</ul>
+<p>Los datos para el cambio de velocidad los guardamos en la variable numérica “Velocidad”, y los datos para el cambio de sentido de giro los guardamos en la variable de texto “Giro”.</p>
+<p>Como hemos visto en la definición de las funciones, la variable “Velocidad” la insertamos en los bloques de movimiento de los motores, dentro de la definición de las funciones.</p>
+<p>Por último, establecemos las condiciones para que, dependiendo del valor de la variable Giro, vaya en la dirección deseada.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_04_2_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_04_2_3DBot" src="../../img/3DBot/actividades/A_04_2_3DBot.png" /></a><br />
+<em>A_04_2_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1701232">Acceder al programa</a></p>
+<p></center></p>
+<h3 id="a_04_3-lectura-de-los-codigos-de-las-teclas-desde-un-mando-ir-cualquiera"><FONT COLOR=#AA0000>A_04_3. Lectura de los códigos de las teclas desde un mando IR cualquiera</font><a class="headerlink" href="#a_04_3-lectura-de-los-codigos-de-las-teclas-desde-un-mando-ir-cualquiera" title="Permanent link">&para;</a></h3>
+<p>Primero debemos ver qué código nos envía cada botón del mando que vamos a utilizar. Lo que vamos a hacer es presionar el botón del mando, leer el dato enviado e imprimirlo en la pantalla del ordenador. De ahí ya podemos copiarla para nuestro futuro programa.</p>
+<p>Simplemente hay que recordar que para visualizar datos en la pantalla es necesario realizar el envío de datos al ordenador cada cierto tiempo (no constantemente) para no saturar la comunicación. Veamos cómo queda el programa:</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_04_3_teclas_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_04_3_3DBot" src="../../img/3DBot/actividades/A_04_3_teclas_3DBot.png" /></a><br />
+<em>A_04_3_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1702217">Acceder al programa</a></p>
+<p></center></p>
+<p>Dependiendo de qué botón se pulse, aparecerá un valor u otro. Es importante tener en cuenta que si no accionamos ningún pulsador lo habitual será recibir un 0. Obtendrás algo así, después de conectarte a la “Consola serie”:</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_04_3_teclas_C_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_04_3_3DBot" src="../../img/3DBot/actividades/A_04_3_teclas_C_3DBot.png" /></a><br />
+<em>A_04_3_3DBot</em>  </p>
+<p></center></p>
+<p>La asociación de códigos, teclas y movimientos es:</p>
+<blockquote>
+<blockquote>
+<p>Flecha arriba: E0E006F9 - Adelante<br />
+Fleccha izquierda: E0E0A659 - Giro izquierda<br />
+Flecha abajo: E0E08679 - Atrás<br />
+Flecha derecha: E0E046B9 - Giro derecha<br />
+Botón OK: E0E016E9 - Parar</p>
+</blockquote>
+</blockquote>
+<h3 id="a_04_4-control-del-robot-con-un-mando-ir-cualquiera"><FONT COLOR=#AA0000>A_04_4. Control del robot con un mando IR cualquiera</font><a class="headerlink" href="#a_04_4-control-del-robot-con-un-mando-ir-cualquiera" title="Permanent link">&para;</a></h3>
+<p>Utilizando los códigos leídos con el programa anterior vamos a realizar un sistema de control de nuestro robot por mando IR. El programa es exactamente igual que el del ejercicio anterior, sólo que ahora comparemos con estos nuevos códigos.</p>
+<p>En este caso vamos a guardar las lecturas del sensor IR en una variable llamada “Lectura mando”. Da igual el nombre, puedes poner lo que quieras.</p>
+<p><center></p>
+<p><a class="glightbox" href="../../img/3DBot/actividades/A_04_4_3DBot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="A_04_4_3DBot" src="../../img/3DBot/actividades/A_04_4_3DBot.png" /></a><br />
+<em>A_04_4_3DBot</em><br />
+<a href="http://www.arduinoblocks.com/web/project/1702292">Acceder al programa</a></p>
+<p></center></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - 2035 Federico Coca
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://x.com/fgcoca" target="_blank" rel="noopener" title="X de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/fgcoca" target="_blank" rel="noopener" title="Github de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.instagram.com/cocafederico/?hl=es" target="_blank" rel="noopener" title="Instagram de Federico Coca" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://x.com/clubroboticagra" target="_blank" rel="noopener" title="X de Club Robótica Granada" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      
+        <script src="../../plugins/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
