@@ -2,33 +2,40 @@
 En esta web se van a tratar los siguientes contenidos:
 
 * **Arduinoblocks**
-    * Introducción
-    * Usuarios gestionados
-    * Creación de proyectos para alumnos
+    * [Introducción](./arduinoblocks/introAB.md)
+    * [Usuarios gestionados](./arduinoblocks/gestionados.md)
+    * [Creación de proyectos para alumnos](./arduinoblocks/proyectos_alumnos.md)
 
 * **IDE 2 de Arduino**
-    * Introducción
-    * Código en Arduinoblocks
-    * Descarga del IDE
-    * Ventana principal del IDE
-    * Características principales del IDE 2.0
+    * [Introducción](./IDE/introIDE.md)
+    * [Código en Arduinoblocks](./IDE/codigoAB.md)
+    * [Descarga del IDE](./IDE/descarga.md)
+    * [Ventana principal del IDE](./IDE/ventanaIDE.md)
+    * [Características principales del IDE 2.0](./IDE/caracteristicasIDE2_0.md)
 
 * **ESP32 STEAMakers**
-    * Introducción
-    * Consumo de energia
-    * Sensores táctiles capacitivos
-    * Sensores internos
-    * Tarjeta microSD
+    * [Introducción](./ESP32/introESP32.md)
+    * [Consumo de energia](./ESP32/Cenergia.md)
+    * [Sensores táctiles capacitivos](./ESP32/Stactil.md)
+    * [Sensores internos](./ESP32/Sinternos.md)
+    * [Tarjeta microSD](./ESP32/microSD.md)
 
 * **Placa Imagina 3DBot**
-    * Introducción
-    * Asociación de pines y componentes
+    * [Introducción](./Imagina/introImagina.md)
+    * [Asociación de pines y componentes](./Imagina/distribucion.md)
+    * [Teoría básica de IoT](./Imagina/IoT_basico.md)
     * Actividades con la placa Imagina
+        - [Básicas](./Imagina/actividades.md)
+        - [De ampliación](./Imagina/amplia.md)
+        - [Avanzadas](./Imagina/avanzadas_imagina.md)
 
 * **3DBot**
-    * Montaje versión impresa
-    * Montaje versión corte en madera
+    * [Montaje versión impresa](./3DBot/montajeImpresa.md)
+    * [Montaje versión corte en madera](./3DBot/montajeCorte.md)
     * Actividades con el 3Dbot
-    * Archivos del diseño
+        - [Básicas](./3DBot/AI_3DBot.md)
+        - [De ampliación](./3DBot/AAm_3DBot.md)
+        - [Avanzadas](./3DBot/Av_3DBot.md)
+    * [Archivos del diseño](./3DBot/archivosFab.md)
 
-Todos los contenidos están basados en los del aula virtual [Robolot Formació](https://www.robolot.online/) creados por Toni Hortal para Robolot con aportación de algunas actualizaciones.
+Todos los contenidos están basados en los del aula virtual [Robolot Formació](https://www.robolot.online/) creados por Toni Hortal para Robolot con aportación de algunas actualizaciones y algunas ampliaciones tematicas.

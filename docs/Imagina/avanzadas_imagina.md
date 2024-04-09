@@ -1,5 +1,5 @@
 # <FONT COLOR=#8B008B>Actividades avanzadas con la placa Imagina 3DBot</font>
-En esta sección realizaremos ejercicios con elementos IoT, interactuar con Telegram, Bluetooth, mando Nunchuck. Todo ello basado en:
+En esta sección realizaremos ejercicios con elementos IoT, interactuar con Telegram, Bluetooth, mando Nunchuk. Todo ello basado en:
 
 * [Manual 3DBot](https://shop.innovadidactic.com/es/imagina-steam-y-makers/1598-kit-imagina-arduino-3dbot-esp32-steamakers-para-arduinoblocks.html) de [Innova Didactic](https://shop.innovadidactic.com/es/)
 * Tutorial de Pedro Ruiz [Ejemplos 3DBot + ESP32 STEAMakers](https://pedroruizf.github.io/ejemplos_3dbot/index.html)
@@ -85,7 +85,7 @@ En la edición del Bot podemos observar como se han editado algunas de las opcio
 
 </center>
 
-### <FONT COLOR=#AA0000>Bloques arduinoblocks</font>
+### <FONT COLOR=#AA0000>Bloques Arduinoblocks</font>
 Para poder trabajar con Telegram arduinoblocks nos ofrece una serie de bloques y tenemos que utilizarlos convenientemente para poder interactuar desde Telegram con nuestras placas.
 
 * **Iniciar Telegram Bot**: permite iniciar el sistema Telegram en la ESP32, debemos indicar el
@@ -216,7 +216,7 @@ En esta actividad vamos a recibir en nuestro Bot de telegram la temperatura a la
 ![Actividad avanzada con Telegram 1](../img/avanzadas_imagina/tm/A_avanz_tm_Imagina_1.png)  
 *Actividad avanzada con Telegram 1*
 
-[Acceder al programa](http://www.arduinoblocks.com/web/project/1683942)
+[Acceder al programa](http://www.arduinoblocks.com/web/project/1696129)
 
 </center>
 
@@ -610,7 +610,7 @@ Resultados obtenidos a través de la app Arduino Bluetooth Controller:
 
 </center>
 
-## <FONT COLOR=#007575>**Mando Nunchuck de la Wii**</font>
+## <FONT COLOR=#007575>**Mando Nunchuk de la Wii**</font>
 Este mando está compuesto por un joystick y un acelerometro:
 
 <center>
@@ -624,8 +624,8 @@ En la imagen vemos la localización del conector en la placa Imagina 3DBot:
 
 <center>
 
-![Conector nunchuck en la placa Imagina 3DBot](../img/avanzadas_imagina/nun/nun_2.png)  
-*Conector nunchuck en la placa Imagina 3DBot*  
+![Conector nunchuk en la placa Imagina 3DBot](../img/avanzadas_imagina/nun/nun_2.png)  
+*Conector nunchuk en la placa Imagina 3DBot*  
 
 </center>
 
@@ -683,12 +683,12 @@ El acelerómetro del Nunchuk es de 3 ejes por lo que es capaz de medir aceleraci
 
 </center>
 
-En el bloque nunchuck se pueden además seleccionar las siguientes opciones:
+En el bloque nunchuk se pueden además seleccionar las siguientes opciones:
 
 <center>
 
-![Opciones del bloque nunchuck](../img/avanzadas_imagina/nun/nun_6.png)  
-*Opciones del bloque nunchuck*  
+![Opciones del bloque nunchuk](../img/avanzadas_imagina/nun/nun_6.png)  
+*Opciones del bloque nunchuk*  
 
 </center>
 

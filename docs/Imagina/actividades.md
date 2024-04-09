@@ -1,19 +1,5 @@
 # <FONT COLOR=#8B008B>Actividades básicas con la placa Imagina 3DBot</font>
-Vamos a desarrollar las siguientes:
-
-A01. Encender un LED  
-A02. Encender un LED con el pulsador  
-A03. Medir la luminosidad con LDR  
-A04. Medir la temperatura con NTC  
-A05. Medir distancias con el sensor de ultrasonidos HC-SR04  
-A06. Generador de notas musicales con el zumbador  
-A07. Funciones  
-A08. Dando expresión al robot  
-A09. Alarma de intrusos con el sensor PIR  
-A10. Controlar un servomotor  
-A11. Subir datos a Internet
-
-Utilizaremos la placa Imagina como shield de la ESP32 STEAMakers.
+Utilizaremos la placa Imagina 3DBot como shield de la ESP32 STEAMakers.
 
 En todas las actividades es muy importane tener presente el siguiente aviso:
 

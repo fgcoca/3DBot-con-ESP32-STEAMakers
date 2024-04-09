@@ -15,10 +15,10 @@ La asociación de pines digitales de entrada/salida con componentes es la siguie
 * D0 / RX0 --> Bluetooth RX
 * D1 / TX0 --> Bluetooth TX
 * D2 / GPIO26 --> Sensor de ultrasonidos (ECHO), pulsador
-* D3 / GPIO25 --> LED verde, emisor infrarrojos
+* D3 / GPIO25 --> <FONT COLOR=#00C800><b>LED verde</b></font>, <u><b>emisor infrarrojos</u></b>
 * D4 / GPIO17 --> Sensor de ultrasonidos (TRIG)
-* D5 / GPIO16 --> LED amarillo, sensor de línea izquierdo
-* D6 / GPIO27 --> LED rojo, sensor de línea derecho
+* D5 / GPIO16 --> <FONT COLOR=#FFC855><b>LED amarillo</b></font>, <u><b>sensor de línea izquierdo</u></b>
+* D6 / GPIO27 --> <FONT COLOR=#FF0000><b>LED rojo</b></font>, <u><b>sensor de línea derecho</u></b>
 * D7 / GPIO14 --> Motor A (izquierdo)
 * D8 / GPIO12 --> Motor A
 * D9 / GPIO13 --> Motor A
@@ -51,4 +51,3 @@ El resto de pines tienen la siguiente correspondencia entre las dos placas:
 ![Resto de pines](../img/imagina/Ima_07.png)  
 
 </center>
-

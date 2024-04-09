@@ -60,7 +60,11 @@ nav:
   - 3DBot:
     - Montaje versión impresa: 3DBot/montajeImpresa.md
     - Montaje versión corte en madera: 3DBot/montajeCorte.md
-    - Actividades con el 3Dbot: 3DBot/actividades.md
+    - El motor DC: 3DBot/motorDC.md
+    - Actividades con el 3Dbot:
+      - Iniciales: 3DBot/AI_3DBot.md
+      - De ampliación : 3DBot/AAm_3DBot.md
+      - Avanzadas: 3DBot/Av_3DBot.md
     - Archivos del diseño: 3DBot/archivosFab.md
   - Miscelanea:
     - Autor: Miscelanea/about.md 
