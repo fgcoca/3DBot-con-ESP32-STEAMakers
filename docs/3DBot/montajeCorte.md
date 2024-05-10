@@ -54,7 +54,7 @@ En la imagen vemos las herramientas.
 </center>
 
 ## <FONT COLOR=#007575>**Montaje**</font>
-Saca las piezas de la caja, quitales los envoltorios y desencaja las piezas que componen el conjunto del chasis.
+Saca las piezas de la caja, quitales los envoltorios.
 
 <center>
 
@@ -63,7 +63,16 @@ Saca las piezas de la caja, quitales los envoltorios y desencaja las piezas que 
 
 </center>
 
-<FONT COLOR=#FF0000><b>Recuerda que las piezas son de un material similar a la madera (DM), que ajustan perfectamente, pero ten en cuenta su fragilidad si en fuerzas el encaje.</b></font>
+El conjunto del chasis viene en una lámina precortada como la siguiente:
+
+<center>
+
+![Lámina DM precortada](../img/3DBot/corte/mad_todas.png)  
+*Lámina DM precortada*  
+
+</center>
+
+<FONT COLOR=#FF0000><b>Desencaja las piezas pero recuerda que las piezas son de un material similar a la madera (DM), que ajustan perfectamente, pero ten en cuenta su fragilidad si en fuerzas el encaje.</b></font>
 
 Empieza con las piezas que forman la zona de la bola de acero.
 

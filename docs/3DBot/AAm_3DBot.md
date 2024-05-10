@@ -106,7 +106,7 @@ Vamos a utilizar la variable de texto “Último movimiento” para memorizar cu
 
 ![A_05_2_3DBot](../img/3DBot/actividades/A_05_2_3DBot.png)  
 *A_05_2_3DBot*  
-[Acceder al programa](http://www.arduinoblocks.com/web/project/1706218)
+[Acceder al programa](http://www.arduinoblocks.com/web/project/1803697)
 
 </center>
 
